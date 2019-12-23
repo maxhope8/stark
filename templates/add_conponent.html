@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-xs-6 col-md-offset-3">
+            <form action="" method="post" novalidate>
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        <label for="">{{ field.label }}:</label>
+                        <div style="position: relative">
+                            {{ field }}
+                            <span class="error pull-right">
+                                {{ field.errors.0 }}
+                            </span>
+                            {% if field.is_pop %}
+                                <a onclick="pop('{{ field.url }}')" style="color: blue; font-size: 30px; position: absolute;top: -10px;">+</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            <p><input type="submit" class="btn btn-primary"></p>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function pop(url) {
+        window.open(url,"","width=600,height=400,top=100,left=200")
+    }
+</script>

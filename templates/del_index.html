@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>删除</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+    <script src="/static/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<h3>删除页面</h3>
+<div>
+    <p>{{ del_obj }}</p>
+</div>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="确认删除" class="btn btn-danger">
+    <a href="{% url list_url %}" class="btn btn-primary">取消</a>
+</form>
+</body>
+</html>
